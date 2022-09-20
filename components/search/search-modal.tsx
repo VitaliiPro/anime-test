@@ -1,6 +1,6 @@
-import { ChangeEvent, useState, useEffect } from "react";
-import Link from "next/link";
-import useDebounce from "../../hook/debounce-hook";
+import { ChangeEvent, useState, useEffect } from 'react'
+import Link from 'next/link'
+import useDebounce from '../../hook/debounce-hook'
 import {
   ModalContainer,
   SearchModalInput,
@@ -13,25 +13,25 @@ import {
   Dot,
   DaggerImageStyled,
   NoResult,
-} from "./search-modal.styled";
-import { SearchProps, DataProps } from "../../interfaces/search-modal";
+} from './search-modal.styled'
+import { SearchProps, DataProps } from '../../interfaces/search-modal'
 
 const SearchModal: React.FC<SearchProps> = ({ isOpen, setIsOpen }) => {
-  const [anime, setAnime] = useState<DataProps>();
-  const [filteredAnime, setFilteredAnime] = useState("");
+  const [anime, setAnime] = useState<DataProps>()
+  const [filteredAnime, setFilteredAnime] = useState('')
 
-  const debouncedValue = useDebounce<string>(filteredAnime, 500);
+  const debouncedValue = useDebounce<string>(filteredAnime, 500)
 
   const handleFilter = (event: ChangeEvent<HTMLInputElement>) => {
-    const searchWord = event.currentTarget.value.toLowerCase();
-    setFilteredAnime(searchWord);
-  };
+    const searchWord = event.currentTarget.value.toLowerCase()
+    setFilteredAnime(searchWord)
+  }
 
   useEffect(() => {
     fetch(`https://api.jikan.moe/v4/anime?limit=5&letter=${filteredAnime}`)
       .then((res) => res.json())
-      .then((json) => setAnime(json));
-  }, [debouncedValue]);
+      .then((json) => setAnime(json))
+  }, [debouncedValue])
 
   if (isOpen) {
     return (
@@ -65,19 +65,19 @@ const SearchModal: React.FC<SearchProps> = ({ isOpen, setIsOpen }) => {
                       </AnimeTextContainer>
                     </AnimeResult>
                   </Link>
-                );
+                )
               })}
             </>
           )}
-          {filteredAnime.length >= 2 && anime?.data.length === 0 && (
+          {filteredAnime.length !== 0 && anime?.data.length === 0 && (
             <NoResult>Oops there is nothing for you reqeust</NoResult>
           )}
         </ResultModal>
       </ModalContainer>
-    );
+    )
   } else {
-    return null;
+    return null
   }
-};
+}
 
-export default SearchModal;
+export default SearchModal

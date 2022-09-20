@@ -1,6 +1,6 @@
-import Link from "next/link";
-import { NameAnime, PostsContainer } from "./card-styled";
-import { CardProps } from "../../interfaces/card";
+import Link from 'next/link'
+import { NameAnime, PostsContainer } from './card-styled'
+import { CardProps } from '../../interfaces/card'
 
 const Card: React.FC<CardProps> = ({ id, title, backgroundImage }) => {
   return (
@@ -9,7 +9,7 @@ const Card: React.FC<CardProps> = ({ id, title, backgroundImage }) => {
         <NameAnime>{title}</NameAnime>
       </PostsContainer>
     </Link>
-  );
-};
+  )
+}
 
-export default Card;
+export default Card

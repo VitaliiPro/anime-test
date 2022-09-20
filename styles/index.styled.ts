@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import BREAKPOINTS from "../constants/breakpoints";
+import styled from 'styled-components'
+import BREAKPOINTS from '../constants/breakpoints'
 
 export const Container = styled.div`
   padding: 0 15rem;
@@ -20,4 +20,4 @@ export const Container = styled.div`
   @media only screen and (max-width: ${BREAKPOINTS.sm}) {
     padding: 0 0.8rem;
   }
-`;
+`

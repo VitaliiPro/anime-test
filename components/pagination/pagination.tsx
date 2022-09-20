@@ -1,4 +1,4 @@
-import { useRouter } from "next/router";
+import { useRouter } from 'next/router'
 import {
   Button,
   Container,
@@ -6,19 +6,19 @@ import {
   PageNumber,
   RightArrowStyled,
   LeftArrowStyled,
-} from "./pagination.styled";
-import { PaginationProps } from "../../interfaces/pagination";
+} from './pagination.styled'
+import { PaginationProps } from '../../interfaces/pagination'
 
 const Pagination: React.FC<PaginationProps> = ({
   currentPage,
   hasNextPage,
 }) => {
-  const router = useRouter();
+  const router = useRouter()
 
   const changePage = (isNext: boolean) => {
-    const newPage = isNext ? currentPage + 1 : currentPage - 1;
-    router.push(`/?page=${newPage}`).catch((e) => console.log(e));
-  };
+    const newPage = isNext ? currentPage + 1 : currentPage - 1
+    router.push(`/?page=${newPage}`).catch((e) => console.log(e))
+  }
 
   return (
     <Container>
@@ -34,7 +34,7 @@ const Pagination: React.FC<PaginationProps> = ({
         </Button>
       </InnerContainer>
     </Container>
-  );
-};
+  )
+}
 
-export default Pagination;
+export default Pagination

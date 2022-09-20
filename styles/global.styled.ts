@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -8,6 +8,16 @@ const GlobalStyle = createGlobalStyle`
     font-display: swap;
   }
   :root {
+    // colors:
+    --lightGray: #ebebeb;
+    --gray: #666666;
+    --gray-2: #5a5a5a;
+    --gray-3: #dddddd;
+    --gray-4: #757575;
+    --gray-5: #a7a7a7;
+    --black: #000000;
+    --white: #ffffff;
+
     // fonts:
     --font-default: 'Inter', sans-serif;
   }
@@ -25,6 +35,6 @@ const GlobalStyle = createGlobalStyle`
   a {
     text-decoration: none;
   }
-`;
+`
 
-export default GlobalStyle;
+export default GlobalStyle

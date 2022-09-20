@@ -1,6 +1,6 @@
-import Link from "next/link";
-import { NextPage } from "next";
-import { GetServerSideProps } from "next";
+import Link from 'next/link'
+import { NextPage } from 'next'
+import { GetServerSideProps } from 'next'
 import {
   Container,
   TopContainer,
@@ -23,15 +23,15 @@ import {
   RatingTitle,
   Description,
   DescriptionText,
-} from "../../styles/anime.styled";
-import { DataProps } from "../../interfaces/anime";
+} from '../../styles/anime.styled'
+import { DataProps } from '../../interfaces/anime'
 
 const AnimeDetail: NextPage<DataProps> = ({ data }) => {
   return (
     <Container>
       <TopContainer>
         <ArrowStyled />
-        <Link href={"/"}>
+        <Link href={'/'}>
           <LinkToHome>Go back to Main</LinkToHome>
         </Link>
       </TopContainer>
@@ -87,17 +87,17 @@ const AnimeDetail: NextPage<DataProps> = ({ data }) => {
         </Description>
       )}
     </Container>
-  );
-};
+  )
+}
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const currentId = context.query.id;
-  const res = await fetch(`https://api.jikan.moe/v4/anime/${currentId}`);
-  const { data } = await res.json();
+  const currentId = context.query.id
+  const res = await fetch(`https://api.jikan.moe/v4/anime/${currentId}`)
+  const { data } = await res.json()
 
   return {
     props: { data },
-  };
-};
+  }
+}
 
-export default AnimeDetail;
+export default AnimeDetail
