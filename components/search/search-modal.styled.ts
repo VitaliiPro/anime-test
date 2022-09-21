@@ -1,6 +1,16 @@
 import styled from 'styled-components'
 import DaggerImage from '../../public/Dagger.svg'
 import BREAKPOINTS from '../../constants/breakpoints'
+import { keyframes } from 'styled-components'
+
+const animation = keyframes`
+  0% { padding-top: 0% }
+  20% { padding-top: 3% }
+  40% { padding-top: 6% }
+  60% { padding-top: 9% }
+  80% { padding-top: 12% }
+  100% { padding-top: 15%}
+ `
 
 export const ModalContainer = styled.div`
   left: 0;
@@ -16,6 +26,7 @@ export const ModalContainer = styled.div`
   padding-top: 10%;
   background: rgba(0, 0, 0, 0.6);
   position: fixed;
+  animation: ${animation} 0.6s ease-out forwards;
 
   @media only screen and (max-width: ${BREAKPOINTS.md}) {
     padding: 15% 5% 0 5%;
