@@ -19,7 +19,7 @@ export const InnerContainer = styled.div`
 export const Button = styled.button`
   height: 3rem;
   width: 3rem;
-  border: 1px solid var(--lightGray);
+  border: 1px solid var(--primary);
   border-radius: 0.3125rem;
   color: grey;
   display: flex;
@@ -28,7 +28,7 @@ export const Button = styled.button`
   cursor: pointer;
 
   &:hover {
-    box-shadow: 0px 5px 20px var(--gray);
+    box-shadow: 0px 5px 20px var(--secondary);
     width: 3.1rem;
     height: 3.1rem;
   }
@@ -46,9 +46,9 @@ export const PageNumber = styled.div`
 `
 
 export const RightArrowStyled = styled(RightArrow)`
-  color: var(--gray);
+  color: var(--secondary);
 `
 
 export const LeftArrowStyled = styled(LeftArrow)`
-  color: var(--gray);
+  color: var(--secondary);
 `

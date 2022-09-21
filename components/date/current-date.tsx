@@ -13,9 +13,9 @@ const CurrentDate = () => {
     })
 
     if (isShort) {
-      return 'Today is the ' + currentDay + 'th ' + 'of ' + currentMonth
+      return `Today is the ${currentDay}th of ${currentMonth}`
     } else {
-      return currentMonthShort + ' ' + currentDay + 'th '
+      return `${currentMonthShort} ${currentDay}th`
     }
   }
 

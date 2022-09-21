@@ -6,7 +6,7 @@ export const PostsContainer = styled.div<{ $backgroundImage?: string }>`
   ${({ $backgroundImage }) => css`
     background: linear-gradient(
           180deg,
-          var(--lightGray) 0%,
+          var(--primary) 0%,
           rgba(0, 0, 0, 0) 0.01%,
           rgba(0, 0, 0, 0.69) 100%
         )
@@ -27,7 +27,7 @@ export const PostsContainer = styled.div<{ $backgroundImage?: string }>`
   transition-duration: 0.2s;
 
   &:hover {
-    box-shadow: 0px 10px 40px var(--gray);
+    box-shadow: 0px 10px 40px var(--secondary);
   }
 
   @media only screen and (max-width: ${BREAKPOINTS.md}) {
@@ -41,11 +41,10 @@ export const NameAnime = styled.span`
   font-weight: 600;
   font-size: 16px;
   line-height: 19px;
-  color: var(--white);
+  color: var(--bg-color);
   padding: 0.75rem;
 
   @media only screen and (max-width: ${BREAKPOINTS.md}) {
-    font-weight: 600;
     font-size: 32px;
     line-height: 39px;
   }

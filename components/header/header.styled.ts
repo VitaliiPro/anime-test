@@ -4,7 +4,7 @@ import BREAKPOINTS from '../../constants/breakpoints'
 export const Container = styled.div`
   width: 100%;
   height: 5rem;
-  border-bottom: 1px solid var(--gray-3);
+  border-bottom: 1px solid var(--border-color);
 `
 
 export const Wrapper = styled.div`
@@ -44,7 +44,7 @@ export const SearchContainer = styled.div`
 export const SearchInput = styled.input`
   border-radius: 1.8rem;
   border: none;
-  background-color: var(--lightGray);
+  background-color: var(--primary);
   color: black;
   height: 2.18rem;
   width: 22.5rem;

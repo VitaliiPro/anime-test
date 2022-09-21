@@ -5,7 +5,7 @@ import BREAKPOINTS from '../../constants/breakpoints'
 export const Container = styled.div`
   height: 7.8125rem;
   width: 100%;
-  border-top: 1px solid var(--gray-3);
+  border-top: 1px solid var(--border-color);
 `
 
 export const Wrapper = styled.div`
@@ -43,14 +43,14 @@ export const Name = styled.h3`
   font-weight: 600;
   font-size: 16px;
   line-height: 19px;
-  color: var(--black);
+  color: var(--font-color);
 `
 
 export const Description = styled.p`
   font-weight: 500;
   font-size: 12px;
   line-height: 15px;
-  color: var(--gray-5);
+  color: var(--font-color-primary);
   margin: 0;
 
   @media only screen and (max-width: ${BREAKPOINTS.md}) {

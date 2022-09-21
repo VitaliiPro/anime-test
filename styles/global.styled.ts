@@ -9,14 +9,14 @@ const GlobalStyle = createGlobalStyle`
   }
   :root {
     // colors:
-    --lightGray: #ebebeb;
-    --gray: #666666;
-    --gray-2: #5a5a5a;
-    --gray-3: #dddddd;
-    --gray-4: #757575;
-    --gray-5: #a7a7a7;
-    --black: #000000;
-    --white: #ffffff;
+    --primary: #ebebeb;
+    --secondary: #666666;
+    --date-color: #5a5a5a;
+    --border-color: #dddddd;
+    --search-color: #757575;
+    --font-color-primary: #a7a7a7;
+    --font-color: #000000;
+    --bg-color: #ffffff;
 
     // fonts:
     --font-default: 'Inter', sans-serif;

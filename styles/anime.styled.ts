@@ -31,7 +31,7 @@ export const TopContainer = styled.div`
 
 export const ArrowStyled = styled(Arrow)`
   cursor: pointer;
-  color: var(--black);
+  color: var(--font-color);
   transform: rotate(0deg);
   margin-right: 0.9375rem;
 `
@@ -41,7 +41,7 @@ export const LinkToHome = styled.h3`
   font-weight: 600;
   font-size: 16px;
   line-height: 19px;
-  color: var(--black);
+  color: var(--font-color);
 `
 
 export const InfoContainer = styled.div`
@@ -88,7 +88,7 @@ export const InfoTitle = styled.h3`
   font-weight: 700;
   font-size: 24px;
   line-height: 29px;
-  color: var(--black);
+  color: var(--font-color);
   margin: 0;
 `
 
@@ -109,7 +109,7 @@ export const TypeContainer = styled.div`
 `
 
 export const TitleContext = styled.p`
-  color: var(--gray-5);
+  color: var(--font-color-primary);
   font-weight: 600;
   font-size: 14px;
   line-height: 17px;
@@ -117,13 +117,13 @@ export const TitleContext = styled.p`
 
 export const Line = styled.div`
   height: 1px;
-  background-color: var(--lightGray);
+  background-color: var(--primary);
   width: 100%;
   margin: 0 0.625rem;
 `
 
 export const TypeDescription = styled.p`
-  color: var(--black);
+  color: var(--font-color);
   font-weight: 600;
   font-size: 14px;
   line-height: 17px;
@@ -145,11 +145,11 @@ export const RatingResults = styled.div`
 `
 
 export const RatingTitle = styled.span`
-  color: var(--lightGray);
+  color: var(--primary);
 `
 
 export const RatingNumber = styled.span`
-  color: var(--black);
+  color: var(--font-color);
 `
 
 export const Description = styled.div`

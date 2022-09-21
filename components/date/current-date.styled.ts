@@ -5,7 +5,7 @@ export const DateText = styled.div`
   font-weight: 600;
   font-size: 14px;
   line-height: 17px;
-  color: var(--gray-2);
+  color: var(--date-color);
 
   @media only screen and (max-width: ${BREAKPOINTS.md}) {
     display: none;

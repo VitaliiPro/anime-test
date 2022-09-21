@@ -34,7 +34,7 @@ export const ModalContainer = styled.div`
 `
 
 export const SearchModalInput = styled.input`
-  background-color: var(--white);
+  background-color: var(--bg-color);
   border-radius: 2rem;
   border: none;
   color: black;
@@ -58,7 +58,7 @@ export const ResultModal = styled.div`
   margin-top: 1.25rem;
   width: 38.625rem;
   height: auto;
-  background-color: var(--white);
+  background-color: var(--bg-color);
   border-radius: 32px;
   position: relative;
 
@@ -76,10 +76,10 @@ export const AnimeResult = styled.div`
   transition-duration: 0.1s;
 
   &:hover {
-    box-shadow: 0px 5px 20px var(--gray);
+    box-shadow: 0px 5px 20px var(--secondary);
     margin: 1.8rem 1.8rem;
     border-radius: 0.3125rem;
-    background-color: var(--lightGray);
+    background-color: var(--primary);
   }
 `
 
@@ -101,7 +101,7 @@ export const NameAnime = styled.p`
   line-height: 19px;
   margin-bottom: 0.3125rem;
   margin-top: 0.2rem;
-  color: var(--black);
+  color: var(--font-color);
 
   @media only screen and (max-width: ${BREAKPOINTS.sm}) {
     width: 10rem;
@@ -113,7 +113,7 @@ export const Description = styled.div`
   height: auto;
   display: flex;
   align-items: center;
-  color: var(--gray-4);
+  color: var(--search-color);
   font-weight: 500;
   font-size: 14px;
   line-height: 17px;
@@ -122,7 +122,7 @@ export const Description = styled.div`
 export const Dot = styled.span`
   height: 0.125rem;
   width: 0.125rem;
-  background-color: var(--gray-4);
+  background-color: var(--search-color);
   border-radius: 50%;
   display: inline-block;
   margin: 0 0.375rem;
@@ -137,13 +137,13 @@ export const DaggerImageStyled = styled(DaggerImage)`
   transition-duration: 0.1s;
 
   &:hover {
-    box-shadow: 0px 5px 20px var(--white);
+    box-shadow: 0px 5px 20px var(--bg-color);
     border-radius: 0.3125rem;
   }
 `
 
 export const NoResult = styled.p`
-  color: var(--black);
+  color: var(--font-color);
   width: 100%;
   height: auto;
   margin: 10% 0;
