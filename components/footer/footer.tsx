@@ -5,7 +5,7 @@ import {
   Description,
   Arrow,
   Wrapper,
-} from "./footer.styled";
+} from './footer.styled'
 
 const Footer = () => {
   return (
@@ -21,7 +21,7 @@ const Footer = () => {
         <Arrow alt="Arrow image" />
       </Wrapper>
     </Container>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

@@ -1,11 +1,11 @@
-import Link from "next/link";
-import { NextPage } from "next";
-import { GetServerSideProps } from "next";
+import Link from 'next/link'
+import { NextPage } from 'next'
+import { GetServerSideProps } from 'next'
 import {
   Container,
   TopContainer,
-  ArrowStyled,
-  LinkToHome,
+  StyledArrow,
+  LinkToPreviousPage,
   InfoContainer,
   AnimeImage,
   Info,
@@ -13,26 +13,21 @@ import {
   MarkIcon,
   InfoTitleContainer,
   InfoContext,
-  TitleContext,
-  TypeContainer,
-  Line,
-  TypeDescription,
-  Rating,
-  RatingResults,
-  RatingNumber,
-  RatingTitle,
   Description,
   DescriptionText,
-} from "../../styles/anime.styled";
-import { DataProps } from "../../interfaces/anime";
+} from '../../styles/anime.styled'
+import { DataProps } from '../../interfaces/anime'
+import getData from '../../utils/getData'
+import InfoRow from '../../components/info-row/info-row'
+import RatingResults from '../../components/rating-results/rating-results'
 
 const AnimeDetail: NextPage<DataProps> = ({ data }) => {
   return (
     <Container>
       <TopContainer>
-        <ArrowStyled />
-        <Link href={"/"}>
-          <LinkToHome>Go back to Main</LinkToHome>
+        <StyledArrow />
+        <Link href={'/'}>
+          <LinkToPreviousPage>Go back to Main</LinkToPreviousPage>
         </Link>
       </TopContainer>
       <InfoContainer>
@@ -43,41 +38,18 @@ const AnimeDetail: NextPage<DataProps> = ({ data }) => {
             <MarkIcon alt="Mark icon" />
           </InfoTitleContainer>
           <InfoContext>
-            <TypeContainer>
-              <TitleContext>Type</TitleContext>
-              <Line />
-              <TypeDescription>{data.type}</TypeDescription>
-            </TypeContainer>
-            <TypeContainer>
-              <TitleContext>Source</TitleContext>
-              <Line />
-              <TypeDescription>{data.source}</TypeDescription>
-            </TypeContainer>
-            <TypeContainer>
-              <TitleContext>Episodes</TitleContext>
-              <Line />
-              <TypeDescription>{data.episodes}</TypeDescription>
-            </TypeContainer>
-            <TypeContainer>
-              <TitleContext>Status</TitleContext>
-              <Line />
-              <TypeDescription>{data.status}</TypeDescription>
-            </TypeContainer>
+            {data.type && <InfoRow label="Type" value={data.type} />}
+            {data.source && <InfoRow label="Source" value={data.source} />}
+            {data.episodes && (
+              <InfoRow label="Episodes" value={data.episodes} />
+            )}
+            {data.status && <InfoRow label="Status" value={data.status} />}
           </InfoContext>
-          <Rating>
-            <RatingResults>
-              <RatingNumber>{data.score}</RatingNumber>
-              <RatingTitle>Score</RatingTitle>
-            </RatingResults>
-            <RatingResults>
-              <RatingNumber>{data.rank}</RatingNumber>
-              <RatingTitle>Rank</RatingTitle>
-            </RatingResults>
-            <RatingResults>
-              <RatingNumber>{data.popularity}</RatingNumber>
-              <RatingTitle>Popularity</RatingTitle>
-            </RatingResults>
-          </Rating>
+          <RatingResults
+            score={data.score}
+            rank={data.rank}
+            popularity={data.popularity}
+          />
         </Info>
       </InfoContainer>
       {data.background && (
@@ -87,17 +59,21 @@ const AnimeDetail: NextPage<DataProps> = ({ data }) => {
         </Description>
       )}
     </Container>
-  );
-};
+  )
+}
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const currentId = context.query.id;
-  const res = await fetch(`https://api.jikan.moe/v4/anime/${currentId}`);
-  const { data } = await res.json();
+export const getServerSideProps: GetServerSideProps = async ({ query }) => {
+  const { data } = await getData(`anime/${query.id}`)
+
+  if (!data) {
+    return {
+      notFound: true,
+    }
+  }
 
   return {
     props: { data },
-  };
-};
+  }
+}
 
-export default AnimeDetail;
+export default AnimeDetail

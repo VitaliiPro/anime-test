@@ -1,12 +1,12 @@
-import styled from "styled-components";
-import { css } from "styled-components";
-import BREAKPOINTS from "../../constants/breakpoints";
+import styled from 'styled-components'
+import { css } from 'styled-components'
+import BREAKPOINTS from '../../constants/breakpoints'
 
 export const PostsContainer = styled.div<{ $backgroundImage?: string }>`
   ${({ $backgroundImage }) => css`
     background: linear-gradient(
           180deg,
-          #d9d9d9 0%,
+          var(--primary) 0%,
           rgba(0, 0, 0, 0) 0.01%,
           rgba(0, 0, 0, 0.69) 100%
         )
@@ -27,7 +27,7 @@ export const PostsContainer = styled.div<{ $backgroundImage?: string }>`
   transition-duration: 0.2s;
 
   &:hover {
-    box-shadow: 0px 10px 40px #666666;
+    box-shadow: 0px 10px 40px var(--secondary);
   }
 
   @media only screen and (max-width: ${BREAKPOINTS.md}) {
@@ -35,18 +35,17 @@ export const PostsContainer = styled.div<{ $backgroundImage?: string }>`
     height: 31.625rem;
     margin: 1rem 0;
   }
-`;
+`
 
 export const NameAnime = styled.span`
   font-weight: 600;
-  font-size: 16px;
-  line-height: 19px;
-  color: #fff;
+  font-size: 1rem;
+  line-height: 1.125rem;
+  color: var(--bg-color);
   padding: 0.75rem;
 
   @media only screen and (max-width: ${BREAKPOINTS.md}) {
-    font-weight: 600;
-    font-size: 32px;
-    line-height: 39px;
+    font-size: 2rem;
+    line-height: 2.5rem;
   }
-`;
+`
