@@ -29,18 +29,18 @@ export const TopContainer = styled.div`
   }
 `
 
-export const ArrowStyled = styled(Arrow)`
+export const StyledArrow = styled(Arrow)`
   cursor: pointer;
   color: var(--font-color);
   transform: rotate(0deg);
   margin-right: 0.9375rem;
 `
 
-export const LinkToHome = styled.h3`
+export const LinkToPreviousPage = styled.h3`
   cursor: pointer;
   font-weight: 600;
-  font-size: 16px;
-  line-height: 19px;
+  font-size: 1rem;
+  line-height: 1.25rem;
   color: var(--font-color);
 `
 
@@ -86,8 +86,8 @@ export const InfoTitleContainer = styled.div`
 
 export const InfoTitle = styled.h3`
   font-weight: 700;
-  font-size: 24px;
-  line-height: 29px;
+  font-size: 1.5rem;
+  line-height: 1.875rem;
   color: var(--font-color);
   margin: 0;
 `
@@ -103,55 +103,6 @@ export const InfoContext = styled.div`
   flex-direction: column;
 `
 
-export const TypeContainer = styled.div`
-  display: flex;
-  align-items: center;
-`
-
-export const TitleContext = styled.p`
-  color: var(--font-color-primary);
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 17px;
-`
-
-export const Line = styled.div`
-  height: 1px;
-  background-color: var(--primary);
-  width: 100%;
-  margin: 0 0.625rem;
-`
-
-export const TypeDescription = styled.p`
-  color: var(--font-color);
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 17px;
-  white-space: nowrap;
-`
-
-export const Rating = styled.div`
-  display: flex;
-  justify-content: space-between;
-`
-
-export const RatingResults = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: end;
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 29px;
-`
-
-export const RatingTitle = styled.span`
-  color: var(--primary);
-`
-
-export const RatingNumber = styled.span`
-  color: var(--font-color);
-`
-
 export const Description = styled.div`
   margin-top: 2rem;
   width: 100%;
@@ -159,8 +110,8 @@ export const Description = styled.div`
   display: flex;
   flex-direction: column;
   font-weight: 600;
-  font-size: 16px;
-  line-height: 19px;
+  font-size: 1rem;
+  line-height: 1.25rem;
 `
 
 export const DescriptionText = styled.p`

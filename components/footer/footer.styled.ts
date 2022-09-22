@@ -17,7 +17,7 @@ export const Wrapper = styled.div`
   max-width: 1400px;
 
   @media only screen and (max-width: ${BREAKPOINTS.xl}) {
-    padding: 0 5rem;
+    padding: 0 10rem;
   }
 
   @media only screen and (max-width: ${BREAKPOINTS.lg}) {
@@ -41,15 +41,15 @@ export const NameContainer = styled.div`
 
 export const Name = styled.h3`
   font-weight: 600;
-  font-size: 16px;
-  line-height: 19px;
+  font-size: 1rem;
+  line-height: 1.125rem;
   color: var(--font-color);
 `
 
 export const Description = styled.p`
   font-weight: 500;
-  font-size: 12px;
-  line-height: 15px;
+  font-size: 0.75rem;
+  line-height: 1rem;
   color: var(--font-color-primary);
   margin: 0;
 

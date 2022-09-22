@@ -11,7 +11,7 @@ import {
 import CurrentDate from '../date/current-date'
 
 const Header: React.FC = () => {
-  const [isSearch, setIsSearch] = useState(false)
+  const [searchIsOpen, setSearchIsOpen] = useState(false)
 
   return (
     <Container>
@@ -19,10 +19,10 @@ const Header: React.FC = () => {
         <Link href={'/'}>
           <Title>Anime</Title>
         </Link>
-        <SearchContainer onClick={() => setIsSearch(!isSearch)}>
+        <SearchContainer onClick={() => setSearchIsOpen(!searchIsOpen)}>
           <SearchInput type="text" placeholder="Search..."></SearchInput>
         </SearchContainer>
-        <SearchModal isOpen={isSearch} setIsOpen={setIsSearch} />
+        <SearchModal isOpen={searchIsOpen} setIsOpen={setSearchIsOpen} />
         <CurrentDate />
       </Wrapper>
     </Container>

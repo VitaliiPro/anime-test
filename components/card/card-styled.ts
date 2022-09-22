@@ -39,13 +39,13 @@ export const PostsContainer = styled.div<{ $backgroundImage?: string }>`
 
 export const NameAnime = styled.span`
   font-weight: 600;
-  font-size: 16px;
-  line-height: 19px;
+  font-size: 1rem;
+  line-height: 1.125rem;
   color: var(--bg-color);
   padding: 0.75rem;
 
   @media only screen and (max-width: ${BREAKPOINTS.md}) {
-    font-size: 32px;
-    line-height: 39px;
+    font-size: 2rem;
+    line-height: 2.5rem;
   }
 `

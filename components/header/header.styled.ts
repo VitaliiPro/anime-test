@@ -16,7 +16,7 @@ export const Wrapper = styled.div`
   max-width: 1400px;
 
   @media only screen and (max-width: ${BREAKPOINTS.xl}) {
-    padding: 0 5rem;
+    padding: 0 10rem;
   }
 
   @media only screen and (max-width: ${BREAKPOINTS.lg}) {
@@ -30,8 +30,8 @@ export const Wrapper = styled.div`
 
 export const Title = styled.h3`
   font-weight: 600;
-  font-size: 24px;
-  line-height: 29px;
+  font-size: 1.5rem;
+  line-height: 1.875rem;
   cursor: pointer;
 `
 

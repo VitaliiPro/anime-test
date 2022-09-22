@@ -41,8 +41,8 @@ export const PageNumber = styled.div`
   align-items: center;
   justify-content: center;
   font-weight: 600;
-  font-size: 25px;
-  line-height: 19px;
+  font-size: 1.5rem;
+  line-height: 1.25rem;
 `
 
 export const RightArrowStyled = styled(RightArrow)`

@@ -17,7 +17,7 @@ const Pagination: React.FC<PaginationProps> = ({
 
   const changePage = (isNext: boolean) => {
     const newPage = isNext ? currentPage + 1 : currentPage - 1
-    router.push(`/?page=${newPage}`).catch((e) => console.log(e))
+    router.push(`/?page=${newPage}`)
   }
 
   return (

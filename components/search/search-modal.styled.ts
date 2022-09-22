@@ -42,8 +42,8 @@ export const SearchModalInput = styled.input`
   width: 38.625rem;
   padding: 1rem 2rem;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
+  font-size: 1rem;
+  line-height: 1.25rem;
 
   &:focus {
     outline: none;
@@ -97,8 +97,8 @@ export const AnimeTextContainer = styled.div`
 
 export const NameAnime = styled.p`
   font-weight: 600;
-  font-size: 16px;
-  line-height: 19px;
+  font-size: 1rem;
+  line-height: 1.25rem;
   margin-bottom: 0.3125rem;
   margin-top: 0.2rem;
   color: var(--font-color);
@@ -115,8 +115,8 @@ export const Description = styled.div`
   align-items: center;
   color: var(--search-color);
   font-weight: 500;
-  font-size: 14px;
-  line-height: 17px;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
 `
 
 export const Dot = styled.span`
@@ -149,6 +149,6 @@ export const NoResult = styled.p`
   margin: 10% 0;
   text-align: center;
   font-weight: 500;
-  font-size: 14px;
-  line-height: 17px;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
 `

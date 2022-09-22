@@ -1,4 +1,4 @@
-export interface GetAnime {
+export interface HomePageProps {
   anime: {
     data: AnimeProps[]
     pagination: {

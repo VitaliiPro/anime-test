@@ -1,14 +1,13 @@
 import type { GetServerSideProps, NextPage } from 'next'
 import Header from '../components/header/header'
 import Footer from '../components/footer/footer'
-import Main from '../components/main/main'
 import Pagination from '../components/pagination/pagination'
 import Card from '../components/card/card'
-import { Container } from '../styles/index.styled'
-import { GetAnime } from '../interfaces'
+import { Container, MainContainer } from '../styles/index.styled'
+import { HomePageProps } from '../interfaces'
 import Head from 'next/head'
 
-const Home: NextPage<GetAnime> = ({ anime }) => {
+const HomePage: NextPage<HomePageProps> = ({ anime }) => {
   return (
     <>
       <Head>
@@ -17,18 +16,16 @@ const Home: NextPage<GetAnime> = ({ anime }) => {
       </Head>
       <Header />
       <Container>
-        <Main>
-          {anime.data.map((item) => {
-            return (
-              <Card
-                id={item.mal_id}
-                title={item.title}
-                backgroundImage={item.images.jpg.image_url}
-                key={item.mal_id}
-              />
-            )
-          })}
-        </Main>
+        <MainContainer>
+          {anime.data.map(({ mal_id, title, images }) => (
+            <Card
+              id={mal_id}
+              title={title}
+              backgroundImage={images.jpg.image_url}
+              key={mal_id}
+            />
+          ))}
+        </MainContainer>
         <Pagination
           currentPage={anime.pagination.current_page}
           hasNextPage={anime.pagination.has_next_page}
@@ -45,9 +42,16 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     `https://api.jikan.moe/v4/anime?limit=9&page=${currentPage}`,
   )
   const anime = await res.json()
+
+  if (!anime.data.length) {
+    return {
+      notFound: true,
+    }
+  }
+
   return {
     props: { anime },
   }
 }
 
-export default Home
+export default HomePage

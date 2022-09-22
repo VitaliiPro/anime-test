@@ -10,7 +10,7 @@ export interface DataProps {
     type?: string
     episodes?: string
     status?: string
-    images: {
+    images?: {
       jpg: {
         image_url: 'string'
       }
