@@ -24,5 +24,8 @@ jobs:
           ssh -i private_key.pem -o StrictHostKeyChecking=no ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }} << 'EOF'
           cd ${{ secrets.REMOTE_PATH }}
           npm install
-          pm2 restart all || pm2 start npm --name "test" -- start
+          npm run build
+          pm2 stop test || true
+          pm2 start npm --name "test" -- start
+          pm2 save
           EOF
