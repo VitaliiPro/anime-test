@@ -1,12 +1,13 @@
-import type { GetServerSideProps, NextPage } from "next";
-import Header from "../components/header/header";
-import Footer from "../components/footer/footer";
-import Main from "../components/main/main";
-import Pagination from "../components/pagination/pagination";
-import Card from "../components/card/card";
-import { Container } from "../styles/index.styled";
-import { GetAnime } from "../interfaces";
-import Head from "next/head";
+import type { GetServerSideProps, NextPage } from 'next'
+import Header from '../components/header/header'
+import Footer from '../components/footer/footer'
+import Main from '../components/main/main'
+import Pagination from '../components/pagination/pagination'
+import Card from '../components/card/card'
+import Test from '../components/test/test'
+import { Container } from '../styles/index.styled'
+import { GetAnime } from '../interfaces'
+import Head from 'next/head'
 
 const Home: NextPage<GetAnime> = ({ anime }) => {
   return (
@@ -16,6 +17,7 @@ const Home: NextPage<GetAnime> = ({ anime }) => {
         <link rel="icon" href="/icon.png" />
       </Head>
       <Header />
+      <Test />
       <Container>
         <Main>
           {anime.data.map((item) => {
@@ -26,7 +28,7 @@ const Home: NextPage<GetAnime> = ({ anime }) => {
                 backgroundImage={item.images.jpg.image_url}
                 key={item.mal_id}
               />
-            );
+            )
           })}
         </Main>
         <Pagination
@@ -36,18 +38,18 @@ const Home: NextPage<GetAnime> = ({ anime }) => {
       </Container>
       <Footer />
     </>
-  );
-};
+  )
+}
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const currentPage = context.query.page || 1;
+  const currentPage = context.query.page || 1
   const res = await fetch(
-    `https://api.jikan.moe/v4/anime?limit=9&page=${currentPage}`
-  );
-  const anime = await res.json();
+    `https://api.jikan.moe/v4/anime?limit=9&page=${currentPage}`,
+  )
+  const anime = await res.json()
   return {
     props: { anime },
-  };
-};
+  }
+}
 
-export default Home;
+export default Home
