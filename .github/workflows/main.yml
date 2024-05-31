@@ -14,3 +14,11 @@ jobs:
           remote_user: ${{ secrets.REMOTE_USER }}
           remote_key: ${{ secrets.REMOTE_KEY }}
           remote_path: ${{ secrets.REMOTE_PATH }}
+
+      - name: Install dependencies and restart app
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }} << 'EOF'
+          cd ${{ secrets.REMOTE_PATH }}
+          npm install
+          pm2 restart all || pm2 start npm --name "my-app" -- start
+          EOF
