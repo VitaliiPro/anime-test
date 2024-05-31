@@ -16,8 +16,12 @@ jobs:
           remote_path: ${{ secrets.REMOTE_PATH }}
 
       - name: Install dependencies and restart app
+        env:
+          PRIVATE_KEY: ${{ secrets.REMOTE_KEY }}
         run: |
-          ssh -o StrictHostKeyChecking=no ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }} << 'EOF'
+          echo "$PRIVATE_KEY" > private_key.pem
+          chmod 600 private_key.pem
+          ssh -i private_key.pem -o StrictHostKeyChecking=no ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }} << 'EOF'
           cd ${{ secrets.REMOTE_PATH }}
           npm install
           pm2 restart all || pm2 start npm --name "my-app" -- start
